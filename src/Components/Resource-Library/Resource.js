@@ -17,7 +17,7 @@ function Resource() {
   useEffect(() => {
     const fetchResources = async () => {
       try {
-        const response = await axios.get('http://localhost:5001/api/data/resources');
+        const response = await axios.get('http://localhost:5000/api/resources');
         setResources(response.data);
 
         const categories = Object.keys(response.data);
