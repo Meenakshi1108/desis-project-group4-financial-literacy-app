@@ -17,7 +17,7 @@ function Resource() {
   useEffect(() => {
     const fetchResources = async () => {
       try {
-        const response = await axios.get('http://localhost:5000/api/resources');
+        const response = await axios.get('http://localhost:5001/api/data/resources');
         setResources(response.data);
 
         const categories = Object.keys(response.data);
@@ -61,9 +61,14 @@ function Resource() {
       </Box>
       <Divider />
 
-      <div>
+      <div className='mx-auto'>
         <ResourceTab onCategoryChange={handleCategoryChange} />
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div
+          style={{
+            display: 'grid'
+          }}
+          className=" grid-cols-1 md:grid-cols-3 gap-8"
+        >
           {filteredResources.map((resource) => (
             <ResourceCard key={resource.id} {...resource} />
           ))}

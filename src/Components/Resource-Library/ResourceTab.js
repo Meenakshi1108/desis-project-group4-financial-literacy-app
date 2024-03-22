@@ -13,7 +13,7 @@ export default function ResourceTab({ onCategoryChange }) {
     const fetchData = async () => {
       try {
         // Replace 'http://localhost:5000/api/data/resources' with your actual API endpoint
-        const response = await axios.get('http://localhost:5000/api/resources');
+        const response = await axios.get('http://localhost:5001/api/data/resources');
         setResources(response.data);
       } catch (error) {
         console.error('There was an error fetching the resources data:', error);

@@ -54,7 +54,7 @@ const NewsSection = () => {
                 <h2>{article.title}</h2>
                 {article.description.length > 0 && (<p>{article.description.length > 150? `${article.description.slice(0, 150)}...`: article.description}</p>)} 
                 <a href={article.url} target="_blank" rel="noopener noreferrer">
-                 <button className='btn'>Read More</button>
+                 <button2 className='btn'>Read More</button2>
                 </a>
               </div>
               
