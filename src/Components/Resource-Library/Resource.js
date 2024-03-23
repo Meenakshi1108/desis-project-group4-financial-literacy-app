@@ -8,18 +8,25 @@ import Box from '@mui/material/Box';
 import Grid from '@mui/material/Grid';
 import './Resource.css';
 
+/**
+ * Resource component displays a resource library with categories and corresponding resources.
+ */
+
 function Resource() {
+
+  // State variables
   const [searchTerm, setSearchTerm] = useState('');
   const [activeCategory, setActiveCategory] = useState('Digital assets and NFTS');
-
   const [resources, setResources] = useState({});
 
+  // Fetch resources from the server on component mount
   useEffect(() => {
     const fetchResources = async () => {
       try {
         const response = await axios.get('http://localhost:5000/api/resources');
         setResources(response.data);
 
+        // Set active category to the first category if not already set
         const categories = Object.keys(response.data);
         if (!categories.includes(activeCategory)) {
           setActiveCategory(categories[0]);
@@ -30,11 +37,15 @@ function Resource() {
     };
 
     fetchResources();
+
   }, []);
+
+  // Filter resources based on search term and active category
   const filteredResources = resources[activeCategory] ? resources[activeCategory].filter((resource) =>
     resource.title.toLowerCase().includes(searchTerm.toLowerCase())
   ) : [];
 
+  // Handle category change
   const handleCategoryChange = (category) => {
     setActiveCategory(category);
   };

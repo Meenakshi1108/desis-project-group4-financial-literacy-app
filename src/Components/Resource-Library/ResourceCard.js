@@ -1,6 +1,16 @@
 import React from 'react';
 import { Card, CardMedia, CardContent, CardActionArea } from '@mui/material';
 
+/**
+ * ResourceCard component displays a card representing a resource.
+ * @param {object} props - Properties passed to the component.
+ * @param {string} props.image - URL of the resource image.
+ * @param {string} props.title - Title of the resource.
+ * @param {string} props.description - Description of the resource.
+ * @param {string} props.url - URL of the resource.
+ */
+
+// Function to handle card click, opening the resource URL in a new tab
 const ResourceCard = ({ image, title, description, url }) => {
   const handleCardClick = () => {
     window.open(url, '_blank', 'noopener,noreferrer');
