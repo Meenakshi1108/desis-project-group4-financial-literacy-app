@@ -62,7 +62,6 @@ function LandingPage() {
           </div>
           
         </div>
-        {/* Repeat for additional rows of features if necessary */}
       </div>
     </>
   );
