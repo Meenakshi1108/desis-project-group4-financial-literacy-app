@@ -51,7 +51,7 @@ function App() {
           <Navbar isAuthenticated={isAuthenticated} handleLogout={handleLogout} />
         <Routes>
 
-          <Route path="/" element={<LandingPage />} />
+          <Route path="/l" element={<LandingPage />} />
           <Route path="/resource" element={<Resource/>} />
           <Route path="/news" element={<NewsSection />} />
           {/* Define routes for other sections */}
@@ -64,10 +64,10 @@ function App() {
             />
 
             <Route
-              path="/blog"
+              path="/"
               element={<PrivateRoute isAuthenticated={isAuthenticated} />}
             >
-              <Route path="/blog" element={<Home />} />
+              <Route path="/" element={<Home />} />
             </Route>
 
             <Route

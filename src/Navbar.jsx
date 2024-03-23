@@ -21,7 +21,7 @@ const Navbar = ({ isAuthenticated, handleLogout }) => {
         <AppBar position="fixed" sx={{ backgroundColor: '#769FCD' }} className='appbar'>
             <Toolbar className='toolbar'>
                 <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
-                    <Link to="/" className="nav-link">Finzo</Link>
+                    <Link to="/l" className="nav-link">Finzo</Link>
                 </Typography>
                 <Button color="inherit">
                     <Link to="/resource" className={`nav-link ${location.pathname === "/resource" ? "selected" : ""}`}>Learn</Link>
@@ -33,7 +33,7 @@ const Navbar = ({ isAuthenticated, handleLogout }) => {
                     <Link to="/quiz" className={`nav-link ${location.pathname === "/quiz" ? "selected" : ""}`}>Quiz</Link>
                 </Button>
                 <Button color="inherit">
-                    <Link to="/blog" className={`nav-link ${location.pathname === "/blog" ? "selected" : ""}`}>Blog</Link>
+                    <Link to="/" className={`nav-link ${location.pathname === "/" ? "selected" : ""}`}>Blog</Link>
                 </Button>
                 <IconButton color="inherit" component={Link} to="/dailydose" onClick={handleFireClick}>
                     {isBurning ?    

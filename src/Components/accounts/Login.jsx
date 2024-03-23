@@ -126,7 +126,7 @@ const Login = ({ isUserAuthenticated }) => {
 
       isUserAuthenticated(true);
       setLogin(loginInitialValues);
-      navigate("/blog");
+      navigate("/");
     } else {
       showError("Something went wrong! please try again later");
     }
