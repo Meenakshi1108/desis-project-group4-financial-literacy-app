@@ -3,16 +3,23 @@ import { useState } from 'react';
 import { useEffect } from 'react';
 import './NewsNavbar.css'; 
 
+// Define the NewsNavbar component
 const NewsNavbar = ({ onSelect }) => {
+  // Define state variable for selected category
   const [selectedCategory, setSelectedCategory] = useState(null);
+
+  // Function to handle category click
   const handleCategoryClick = (category) => {
-    onSelect(category);
-    setSelectedCategory(category);
+    onSelect(category); // Call onSelect function from parent component
+    setSelectedCategory(category); // Set selected category
   };
 
+  // useEffect hook to log selected category when it changes
   useEffect(() => {
     console.log(selectedCategory);
-  }, [selectedCategory]);
+  }, [selectedCategory]); // Run useEffect when selectedCategory changes
+
+  // Render the NewsNavbar component
   return (
     <div className="navbar">
       <button className={selectedCategory === 'global finance' ?
@@ -25,4 +32,5 @@ const NewsNavbar = ({ onSelect }) => {
   );
 };
 
+// Export NewsNavbar component with React.memo for performance optimization
 export default React.memo(NewsNavbar);
