@@ -11,18 +11,22 @@ import Streak from "./assets/Streak.jpg";
 import "./LandingPage.css";
 import NewsSection from './NewsSection';
 
-
+// Define the LandingPage component
 function LandingPage() {
+  // Render the LandingPage component
   return (
     <>
+      {/* Hero section */}
       <div className="landing-container">
         <h1 className="landing-title">Finzo: Empower Your <br />Financial Journey</h1>
         <p className="landing-description">Discover financial empowerment with Finzo. Your essential tool for navigating the world of finance, connecting with a community, and accessing valuable resources. Start your journey to financial literacy now.</p>
         <img src={Main1} alt="Hero Section" className="hero-image" />
       </div>
+      {/* Features section */}
       <div className="features-container">
         <h2 className="features-title">Our Features</h2>
         <div className="features-row">
+          {/* Feature cards */}
           <div className="feature-card">
             <img src={Learn} alt="Feature" className="feature-image" />
             <h4 className='feature-heading'>Expand Your Financial Knowledge!</h4>
@@ -64,4 +68,5 @@ function LandingPage() {
   );
 }
 
+// Export the LandingPage component
 export default LandingPage;
