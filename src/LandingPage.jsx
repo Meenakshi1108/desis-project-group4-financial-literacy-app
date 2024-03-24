@@ -1,3 +1,15 @@
+/**
+ * LandingPage Component
+ * 
+ * The LandingPage component serves as the landing page for the Finzo application,
+ * providing an overview of its features and functionality. It includes sections
+ * for the hero banner, highlighting the core purpose of Finzo, and features
+ * showcasing different aspects such as learning resources, financial news, quizzes,
+ * community discussions, and daily knowledge doses.
+ * 
+ * @returns {JSX.Element} Landing page layout with hero banner and feature sections.
+ */
+
 import React from 'react';
 import { BrowserRouter, Link, Route, Routes } from 'react-router-dom'
 import Main1 from './assets/Main1.jpg';
@@ -9,7 +21,7 @@ import Streak from "./assets/Streak.jpg";
 
 
 import "./LandingPage.css";
-import NewsSection from './NewsSection';
+
 
 // Define the LandingPage component
 function LandingPage() {
