@@ -1,10 +1,50 @@
-import React from 'react';
+/**
+ * StockSection component fetches and displays the currencies and stocks data from the server.
+ * It uses the useState and useEffect hooks to manage state and perform side effects.
+ * It uses the axios library to make GET requests to the server API endpoints.
+ * @returns {JSX.Element} StockSection component
+ */
+
+import React, { useState, useEffect } from 'react';
+import axios from 'axios';
 import './StockSection.css';
 
+// StockSection component
 const StockSection = () => {
+  // Define state variables for currencies and stocks data
+  const [currencies, setCurrencies] = useState([]);
+  const [stocks, setStocks] = useState([]);
+
+  // Fetch currencies and stocks data from the server on component mount
+  useEffect(() => {
+    fetchCurrencies();
+    fetchStocks();
+  }, []);
+
+  const fetchCurrencies = async () => {
+    try {
+      const response = await axios.get("http://localhost:5000/api/currencies");
+      // Access the 'Currencies' array from the response data
+      setCurrencies(response.data.map(obj => obj.Currencies).flat());
+    } catch (error) {
+      console.error('Error fetching currencies:', error);
+    }
+  };
+
+  const fetchStocks = async () => {
+    try {
+      const response = await axios.get("http://localhost:5000/api/stocks");
+      // Access the 'Stocks' array from the response data
+      setStocks(response.data.map(obj => obj.Stocks).flat());
+    } catch (error) {
+      console.error('Error fetching stocks:', error);
+    }
+  };
+
+  // Render the StockSection component
   return (
     <div className="vertical-section">
-      <h2>Currencies</h2>
+      <h2 className='heading'>Currencies</h2>
       <table>
         <thead>
           <tr>
@@ -14,35 +54,17 @@ const StockSection = () => {
           </tr>
         </thead>
         <tbody>
-          <tr>
-            <td>USD</td>
-            <td>$1.00</td>
-            <td>+0.05%</td>
-          </tr>
-          <tr>
-            <td>EUR</td>
-            <td>€0.85</td>
-            <td>-0.02%</td>
-          </tr>
-          <tr>
-            <td>GBP</td>
-            <td>£0.72</td>
-            <td>+0.03%</td>
-          </tr>
-          <tr>
-            <td>JPY</td>
-            <td>¥110.02</td>
-            <td>-0.01%</td>
-          </tr>
-          <tr>
-            <td>AUD</td>
-            <td>A$1.29</td>
-            <td>+0.08%</td>
-          </tr>
+          {currencies.map((currency, index) => (
+            <tr key={index}>
+              <td>{currency.Name}</td>
+              <td>{currency['Current Price']}</td>
+              <td>{currency.Change}</td>
+            </tr>
+          ))}
         </tbody>
       </table>
-
-      <h2>Stocks</h2>
+      
+      <h2 className='heading'>Stocks</h2>
       <table>
         <thead>
           <tr>
@@ -52,35 +74,18 @@ const StockSection = () => {
           </tr>
         </thead>
         <tbody>
-          <tr>
-            <td>Apple Inc.</td>
-            <td>$150.25</td>
-            <td>+0.5%</td>
-          </tr>
-          <tr>
-            <td>Microsoft Corporation</td>
-            <td>$300.50</td>
-            <td>-0.3%</td>
-          </tr>
-          <tr>
-            <td>Google LLC</td>
-            <td>$2500.75</td>
-            <td>+0.8%</td>
-          </tr>
-          <tr>
-            <td>Amazon.com, Inc.</td>
-            <td>$3500.00</td>
-            <td>-0.2%</td>
-          </tr>
-          <tr>
-            <td>Facebook, Inc.</td>
-            <td>$330.25</td>
-            <td>+0.1%</td>
-          </tr>
+          {stocks.map((stock, index) => (
+            <tr key={index}>
+              <td>{stock.Name}</td>
+              <td>{stock['Current Price']}</td>
+              <td>{stock.Change}</td>
+            </tr>
+          ))}
         </tbody>
       </table>
     </div>
   );
 };
 
+// Export the StockSection component
 export default StockSection;
