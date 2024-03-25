@@ -34,7 +34,7 @@ Finzo is a comprehensive web application designed to empower individuals with es
 To run the project locally, follow these steps:
 
 1. Clone the repository:
-git clone <repository_url>
+git clone https://github.com/Meenakshi1108/desis-project-group4-financial-literacy-app.git
 
 2. Navigate to the project directory:
 cd desis-project-group4-financial-literacy-app
