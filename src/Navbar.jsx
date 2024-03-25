@@ -1,3 +1,16 @@
+/**
+ * Navbar Component
+ * 
+ * The Navbar component represents the navigation bar of the application.
+ * It includes links to different sections of the application such as learning resources,
+ * news, quizzes, blogs, and user account. It also provides a toggle button to switch
+ * between different visual modes, indicating the current mode with icons.
+ * 
+ * @param {boolean} isAuthenticated - Indicates whether the user is authenticated.
+ * @param {Function} handleLogout - Callback function to handle user logout.
+ * @returns {JSX.Element} Navigation bar with links and toggle button.
+ */
+
 import React, { useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import AppBar from '@mui/material/AppBar';
@@ -9,14 +22,21 @@ import WhatshotIcon from '@mui/icons-material/Whatshot';
 import LocalFireDepartmentIcon from '@mui/icons-material/LocalFireDepartment';
 import './Navbar.css'; 
 
+
+// Define the Navbar component
 const Navbar = ({ isAuthenticated, handleLogout }) => {
+     // Define state variable for the burning icon
     const [isBurning, setIsBurning] = useState(false);
+
+    // Get the current location using useLocation hook from react-router-dom
     const location = useLocation();
 
+    // Define the event handler for the fire icon click
     const handleFireClick = () => {
         setIsBurning(!isBurning);
     };
 
+    // Return the JSX code for the Navbar component
     return (
         <AppBar position="fixed" sx={{ backgroundColor: '#769FCD' }} className='appbar'>
             <Toolbar className='toolbar'>
@@ -41,6 +61,7 @@ const Navbar = ({ isAuthenticated, handleLogout }) => {
                         <WhatshotIcon />
                     }
                 </IconButton>
+                {/* Display the login/logout button based on the authentication status */}
                 {isAuthenticated ? (
                         <li><button onClick={handleLogout} className={`nav-link ${location.pathname === "/blog" ? "selected" : ""}`}>Logout</button></li>
                         ) : (
@@ -51,4 +72,5 @@ const Navbar = ({ isAuthenticated, handleLogout }) => {
     );
 };
 
+// Export the Navbar component
 export default Navbar;

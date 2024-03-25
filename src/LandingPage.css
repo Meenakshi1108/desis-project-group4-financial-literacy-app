@@ -1,5 +1,3 @@
-
-
 /* Landing Page Styles */
 .landing-container {
     position: relative;
@@ -10,11 +8,11 @@
   }
   
   .landing-title {
-    font-size: 4rem; /* Adapt size as needed */
+    font-size: 4rem; 
     font-weight: bold;
     color: white;
     position: absolute;
-    top: 8rem; /* Adjust based on your layout */
+    top: 8rem; 
     left: 2.5rem;
   }
   
@@ -30,7 +28,7 @@
   
   .hero-image {
     width: 100%;
-    height: 650px; /* Adjust based on your layout, could use 100vh for full height */
+    height: 650px; 
   }
   
   /* Features Section Styles */
@@ -64,7 +62,7 @@
     display: flex;
     flex-direction: column;
     align-items: start;
-    width: 25%; /* Adjust based on your layout */
+    width: 25%; 
     margin-bottom: 1rem;
     padding: 16px;
     background-color: #ecf0f4;
@@ -74,11 +72,12 @@
   
   .feature-image {
     width: 100%;
-    height: auto; /* Adjust based on your content */
+    height: auto; 
     border-radius: 6px;
   }
 
   .feature-heading{
+    margin-top: 1rem;
     margin-bottom: 0.5rem;
   }
   

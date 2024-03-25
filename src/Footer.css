@@ -1,6 +1,8 @@
+/*Styles for the Footer component*/
+
 .footer{
     background-color: #f8f9fa;
-    padding: 1px 20px 25px 20px;
+    padding: 10px 20px 20px 20px;
     text-align: center;
     height: 10px;
     line-height: 10px;
