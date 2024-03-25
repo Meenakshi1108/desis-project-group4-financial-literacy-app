@@ -2,14 +2,23 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import './TopicSelection.css';
 
+/**
+ * Component for selecting a topic and taking quizzes.
+ * Fetches topics from the server and displays them as cards.
+ * @param {Function} onSelectTopic - Callback function to handle topic selection.
+ */
 const TopicSelection = ({ onSelectTopic }) => {
+  // State to hold the list of topics
   const [topics, setTopics] = useState([]);
 
+  // Fetch topics from the server when the component mounts
   useEffect(() => {
-    // Fetch topics from the server when the component mounts
     fetchTopics();
   }, []);
 
+  /**
+   * Fetch topics from the server using Axios.
+   */
   const fetchTopics = async () => {
     try {
       const response = await axios.get("http://localhost:5000/api/topics");

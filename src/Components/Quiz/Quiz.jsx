@@ -4,15 +4,26 @@ import img1 from "../../assets/img1.jpg"
 import img2 from "../../assets/img2.jpg"
 import img3 from "../../assets/img3.jpg"
 
-const Quiz = ({ questions,onGoToHomepage }) => {
+/**
+ * Component for rendering and managing quizzes.
+ * @param {Object[]} questions - Array of objects representing quiz questions.
+ * @param {Function} onGoToHomepage - Callback function to navigate to the homepage.
+ */
+const Quiz = ({ questions, onGoToHomepage }) => {
+    // State variables
     const [index, setIndex] = useState(0);
     const [lock, setLock] = useState(false);
     const [result, setResult] = useState(false);
     const [score, setScore] = useState(0);
     const [explanation, setExplanation] = useState('');
 
+    // Ref for options
     const optionRefs = useRef([]);
 
+    /**
+     * Check the selected answer against the correct answer.
+     * @param {number} ans - The selected answer.
+     */
     const checkAns = (ans) => {
         if (!lock) {
             const correctAns = questions[index].ans;
@@ -28,10 +39,18 @@ const Quiz = ({ questions,onGoToHomepage }) => {
         }
     };
 
+    /**
+     * Calculate the percentage score.
+     * @returns {number} - The percentage score.
+     */
     const calculatePercentage = () => {
         return (score / questions.length) * 100;
     };
 
+    /**
+     * Get a message based on the score percentage.
+     * @returns {Object} - Object containing the message and image URL.
+     */
     const getScoreMessage = () => {
         const percentage = calculatePercentage();
         if (percentage === 100) {
@@ -52,6 +71,9 @@ const Quiz = ({ questions,onGoToHomepage }) => {
         }
     };
 
+    /**
+     * Move to the next question.
+     */
     const next = () => {
         if (lock) {
             if (index === questions.length - 1) {
@@ -68,6 +90,9 @@ const Quiz = ({ questions,onGoToHomepage }) => {
         }
     };
 
+    /**
+     * Reset the quiz.
+     */
     const reset = () => {
         setIndex(0);
         setScore(0);
@@ -76,10 +101,10 @@ const Quiz = ({ questions,onGoToHomepage }) => {
         setExplanation(''); 
     };
 
+    // Get score message and image URL
     const { message, imageUrl } = getScoreMessage();
 
     return (
-        
         <div className='container'>
             {result ? (
                 <>
@@ -93,9 +118,9 @@ const Quiz = ({ questions,onGoToHomepage }) => {
                 </>
             ) : (
                 <>
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor" width="30" height="30" onClick={onGoToHomepage}>
-            <path d="M8.543 2.232a.75.75 0 0 0-1.085 0l-5.25 5.5A.75.75 0 0 0 2.75 9H4v4a1 1 0 0 0 1 1h1a1 1 0 0 0 1-1v-1a1 1 0 1 1 2 0v1a1 1 0 0 0 1 1h1a1 1 0 0 0 1-1V9h1.25a.75.75 0 0 0 .543-1.268l-5.25-5.5Z" />
-        </svg>
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor" width="30" height="30" onClick={onGoToHomepage}>
+                        <path d="M8.543 2.232a.75.75 0 0 0-1.085 0l-5.25 5.5A.75.75 0 0 0 2.75 9H4v4a1 1 0 0 0 1 1h1a1 1 0 0 0 1-1v-1a1 1 0 1 1 2 0v1a1 1 0 0 0 1 1h1a1 1 0 0 0 1-1V9h1.25a.75.75 0 0 0 .543-1.268l-5.25-5.5Z" />
+                    </svg>
                     <h2 className="text-center">{index + 1}.{questions[index].question}</h2>
                     <ul>
                         <li ref={el => (optionRefs.current[0] = el)} onClick={() => checkAns(1)} className="option">{questions[index].option1}</li>
@@ -119,5 +144,3 @@ const Quiz = ({ questions,onGoToHomepage }) => {
 };
 
 export default Quiz;
-
-
