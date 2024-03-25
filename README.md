@@ -1,70 +1,56 @@
-# Getting Started with Create React App
+# Finzo - Financial Literacy Web Application
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+**Authors:** Group 4 (SENIHERS GROUP 4)
+- Meenakshi Sundar
+- Nandini Maheshwari
+- Shreshy Srivastava
+- Shyamlee Kumari
+- Surbhi Pittie
 
-## Available Scripts
+**Mentor:** Shubham Goel
 
-In the project directory, you can run:
+## Introduction
 
-### `npm start`
+Finzo is a comprehensive web application designed to empower individuals with essential financial skills. It offers a variety of features including Finance News, Quizzes, Daily Dose of Knowledge, Community Discussion, and a Resource Library, all aimed at enhancing financial literacy in an engaging and user-friendly manner.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## Features
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+- **Finance News:** Stay updated with the latest developments in the financial world.
+- **Quizzes:** Test and reinforce your knowledge across various financial domains.
+- **Daily Dose of Knowledge:** Receive insightful information about finance on a daily basis.
+- **Community Discussion:** Engage in discussions, share insights, and learn from others.
+- **Resource Library:** Access a curated collection of educational materials on financial topics.
 
-### `npm test`
+## Technologies Used
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- React.js
+- Vite
+- Express.js
+- MongoDB
+- Material-UI
 
-### `npm run build`
+## Installation
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+To run the project locally, follow these steps:
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+1. Clone the repository:
+git clone <repository_url>
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+2. Navigate to the project directory:
+cd desis-project-group4-financial-literacy-app
 
-### `npm run eject`
+3. Install dependencies:
+npm install
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+4. Start the development server:
+npm start
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+5. Open your browser and go to `http://localhost:3000` to view the application.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+## Acknowledgements
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+We would like to thank our mentor, Shubham Goel, for his guidance and support throughout the development of Finzo.
 
-## Learn More
+---
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Thank you for your interest in Finzo! If you have any questions or feedback, please don't hesitate to reach out.
