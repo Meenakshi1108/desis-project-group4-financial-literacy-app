@@ -24,7 +24,7 @@ Finzo is a comprehensive web application designed to empower individuals with es
 ## Technologies Used
 
 - React.js
-- Vite
+- Create React App
 - Express.js
 - MongoDB
 - Material-UI
