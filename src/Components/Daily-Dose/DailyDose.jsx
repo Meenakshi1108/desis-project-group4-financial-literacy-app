@@ -19,7 +19,7 @@ const DailyDose = () => {
     const fetchDailyDose = async () => {
       try {
         const response = await axios.get(urlapi);
-        setDailyDose(response.data.articles[3]);
+        setDailyDose(response.data.articles[1]);
       } catch (error) {
         console.error(error);
       }
