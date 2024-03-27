@@ -55,12 +55,11 @@ const DailyDose = () => {
             <img src={dailyDose.urlToImage} alt={dailyDose.title} className="daily-dose__image" />
             <h3 className="daily-dose__title">{dailyDose.title}</h3>
             <div className="daily-dose__description">
-              {isReadMoreOpen ? dailyDose.content : dailyDose.description}
-              {dailyDose.description.length >= dailyDose.description.length && (
-                <button className="read-more-button" onClick={toggleReadMore}>
-                  {isReadMoreOpen ? 'Read Less' : 'Read More'}
-                </button>
-              )}
+                <a href={dailyDose.url}>
+                  <button className="read-more-button"  /*onClick={toggleReadMore}*/>
+                    Read More
+                  </button>
+                </a>
             </div>
           </>
         )}
