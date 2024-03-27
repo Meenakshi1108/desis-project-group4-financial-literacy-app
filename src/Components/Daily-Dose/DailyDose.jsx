@@ -7,6 +7,7 @@ const DailyDose = () => {
   const [checkedIn, setCheckedIn] = useState(false);
   const [streak, setStreak] = useState(0);
   const [isReadMoreOpen, setIsReadMoreOpen] = useState(false);
+  const [lastCheckedIn, setLastCheckedIn] = useState(new Date());
   const d = new Date();
 
   const year = d.getFullYear();
@@ -14,7 +15,7 @@ const DailyDose = () => {
   const month = d.getMonth();
 
   const urlapi = `https://newsapi.org/v2/everything?q=finance&from=2024-03-19&to=${year}-${month}-${date}&sortBy=popularity&apiKey=ae0f4f17ed804a8c9d9710f7f40ba987`;
-
+  const today = new Date(d.getFullYear(), d.getMonth(), d.getDate());
   useEffect(() => {
     const fetchDailyDose = async () => {
       try {
@@ -27,14 +28,31 @@ const DailyDose = () => {
     fetchDailyDose();
   }, []);
 
-  const handleCheckIn = async () => {
-    try {
-      //await axios.post({urlapi});
-      setCheckedIn(true);
-      setStreak(streak + 1);
-    } catch (error) {
-      console.error(error);
+  useEffect(() => {
+  const checkLastCheckedIn = () => {
+    const localLastCheckedIn = localStorage.getItem('lastCheckedIn');
+    if (!localLastCheckedIn) {
+      setLastCheckedIn(today);
+      localStorage.setItem('lastCheckedIn', today.toISOString().split('T')[0]);
+    } else {
+      const lastCheckedInDate = new Date(localLastCheckedIn);
+      const differenceInHours = (today - lastCheckedInDate) / (1000 * 60 * 60);
+      if (differenceInHours < 24) {
+        setStreak(streak + 1);
+        localStorage.setItem('streak', streak + 1);
+      } else {
+        setStreak(0);
+        localStorage.setItem('streak', 0);
+      }
+      setLastCheckedIn(today);
+      localStorage.setItem('lastCheckedIn', today.toISOString().split('T')[0]);
     }
+  };
+  checkLastCheckedIn();
+}, []);
+
+  const handleCheckIn = () => {
+    setCheckedIn(true);
   };
 
   const toggleReadMore = () => {
