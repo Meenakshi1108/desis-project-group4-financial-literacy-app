@@ -165,6 +165,7 @@ const Login = ({ isUserAuthenticated }) => {
               value={login.password}
               onChange={(e) => onValueChange(e)}
               name="password"
+              type="password"
               label="Enter Password"
             />
 
@@ -199,6 +200,7 @@ const Login = ({ isUserAuthenticated }) => {
               variant="standard"
               onChange={(e) => onInputChange(e)}
               name="password"
+              type="password"
               label="Enter Password"
             />
 

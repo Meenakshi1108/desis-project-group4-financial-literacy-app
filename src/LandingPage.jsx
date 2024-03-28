@@ -64,7 +64,7 @@ function LandingPage() {
             <img src={Discuss} alt="Feature" className="feature-image" />
             <h4 className='feature-heading'>Join the Conversation!</h4>
             <p className="feature-description">Engage with the community and explore insightful blogs in our Discussion Section.</p>
-            <Link to="/blog" className="explore-button">Explore</Link>
+            <Link to="/" className="explore-button">Explore</Link>
           </div>
           <div className="feature-card">
             <img src={Streak} alt="Feature" className="feature-image" />
